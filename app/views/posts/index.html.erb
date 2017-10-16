@@ -1,0 +1,11 @@
+<ul>
+  <% @posts.each do |post| %>
+    <li>
+      <a href="<%= post_path(post) %>">
+        <h3><%= post.title %></h3>
+      </a>
+      <p><%= post.description %></p>
+      <p>Written by: <%= User.find(post.user_id).name %></p>
+    </li>
+  <% end %>
+</ul>

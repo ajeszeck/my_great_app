@@ -16,3 +16,9 @@ end
 20.times do 
   Post.create(title: "#{Faker::Dessert.flavor} #{Faker::Dessert.topping}", description: Faker::Lorem.paragraph(2), user_id: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0].sample)
 end
+
+10.times do
+  user = User.new(name: Faker::Name.name_with_middle, email: Faker::Internet.safe_email)
+  user.password = "password"
+  user.save
+end
