@@ -7,5 +7,9 @@
       <p><%= post.description %></p>
       <p>Written by: <%= User.find(post.user_id).name %></p>
     </li>
+    <form action="<%= post_path(post) %>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="delete">
+    </form>
   <% end %>
 </ul>
